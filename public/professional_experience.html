@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>DashBoard</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://kit.fontawesome.com/a4a80a4593.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    <style>
+        *{
+            font-family: 'Dosis', sans-serif;
+            color: #124a63;
+            background-color: #e9ecef;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            background-color: #e9ecef;
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+        h4,p,h3,i{
+            background: transparent!important;
+        }
+        .dashboard-nav{
+            padding: 0;
+        }
+        .card-body{
+            background: #fff;
+        }
+        .project-card .card-title{
+            color: #F28F38;
+            background:transparent;
+        }
+        .project-duration{
+            background: transparent;
+        }
+        .project-card:hover .card-body{
+            background: #0b2997;
+        }
+        .project-card:hover .card-title,.project-card:hover div .project-duration,.project-card:hover div p{
+            color: #fff;
+        }
+        .packlist{
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+        .packlist-body{
+            background: transparent;
+            position: relative;
+            z-index: 10;
+        }
+        .packlist::after{
+            position: absolute;
+            transform: translateZ(-10px);
+            content: "";
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            right: -50px;
+            top: -140px;
+            background-color:rgba(102,209,242,0.2);
+        }
+        .packlist::before{
+            position: absolute;
+            content: "";
+            width: 330px;
+            transform: translateZ(-10px);
+            height: 330px;
+            border-radius: 50%;
+            right: 62%;
+            top: 62%;
+            background-color:rgba(102,209,242,0.2);
+        }
+        .row .col{
+            background: transparent;
+            position: relative;
+            z-index: 0;
+        }
+        .sub-content{
+            background: transparent;
+            margin-left: 1px; 
+            margin-right: 1px;
+        }
+        .heading{
+            background: transparent;
+        }
+        .main{
+            background: #F0D5F2;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="container navbar navbar-expand-lg navbar-light sticky-top d-flex">
+        <a class="navbar-brand" href="/">SK</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav d-flex float-right ml-auto">
+            <a class="nav-item nav-link" href="./#My_Works">My Works</a>
+            <a class="nav-item nav-link" href="./#Education">Education</a>
+            <a class="nav-item nav-link" href="./#Hobbies">My Hobbies</a>
+            <a class="nav-item nav-link" href="./#Find_Me">Find Me</a>
+          </div>
+        </div>
+      </nav>
+      <br>      
+        <div class="row">
+            <div class="col-md-1 col-xl-1 col-sm-1"></div> 
+                <div class="col">  
+                    <div class="card packlist">
+                        <div class="card-body packlist-body">
+                            <div class="heading d-flex justify-content-center">
+                                <h3 class="card-title">Organizations</h3>
+                            </div>
+                            <br>
+                            <div class="d-flex justify-content-around" style="background: transparent;">
+                              <div class="card project-card" style="width: 18rem;">
+                                  <div class="card-body">
+                                    <h5 class="card-title" >HuT Labs</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted project-duration">Intern</h6>
+
+                                    <p>
+                                      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Vidyut_Rakshak" aria-expanded="false" aria-controls="Vidyut_Rakshak">
+                                        Details.
+                                      </button>
+                                    </p>
+                                    <div class="collapse" id="Vidyut_Rakshak" style="background: transparent;">
+                                      <p class="card-text">Working on a Project
+                                        Deep Learning-Based Lane Detection Algorithm in Self Driving Cars</p>
+                                    </div>
+                                  </div>
+                              </div>
+
+                              <div class="card project-card" style="width: 18rem;">
+                                  <div class="card-body">
+                                    <h5 class="card-title" >Coding Club India</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted project-duration">Campus Ambassador</h6>
+
+                                    <p>
+                                      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Vruksha_Rakshak" aria-expanded="false" aria-controls="Vruksha_Rakshak">
+                                        Details.
+                                      </button>
+                                    </p>
+                                    <div class="collapse" id="Vruksha_Rakshak" style="background: transparent;">
+                                      <p class="card-text">Promoted and marketed the programs, events, webinars, courses that are conducted by
+                                        Coding Club India and improved my skills in leadership, organizing, and product
+                                        managing.</p>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <br><br>
+                            <div class="heading d-flex justify-content-center">
+                                <h3 class="card-title"> My Courses</h3>
+                            </div>
+                            <br>
+                            <div class="d-flex justify-content-around" style="background: transparent;">
+                              <div class="card project-card" style="width: 18rem;">
+                                  <div class="card-body">
+                                    <h5 class="card-title" >Python Data Structures-Coursera</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted project-duration">08/2020</h6>
+                                  </div>
+                              </div>
+
+                              <div class="card project-card" style="width: 18rem;">
+                                  <div class="card-body">
+                                    <h5 class="card-title" >Programming for Everybody (Getting Started with Python)-Coursera</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted project-duration">07/2020</h6>
+                                  </div>
+                              </div>
+
+                              <div class="card project-card" style="width: 18rem;">
+                                <div class="card-body">
+                                  <h5 class="card-title" >Machine Learning Foundations: A Case Study Approach-Coursera</h5>
+                                  <h6 class="card-subtitle mb-2 text-muted project-duration">06/2020</h6>
+                                </div>
+                            </div>
+                          </div>
+                            <br>
+                            <div class="d-flex justify-content-around" style="background: transparent;">
+                              <div class="card project-card" style="width: 18rem;">
+                                  <div class="card-body">
+                                    <h5 class="card-title" >Online Training on Internet of Things and Machine Learning-BOLT</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted project-duration">01/2020 – 04/2020</h6>
+                                  </div>
+                              </div>
+
+                              <div class="card project-card" style="width: 18rem;">
+                                  <div class="card-body">
+                                    <h5 class="card-title" >Sixth Sense Robotics-Skyfi Labs</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted project-duration">03/2019</h6>
+                                  </div>
+                              </div>
+
+                              <div class="card project-card" style="width: 18rem;">
+                                <div class="card-body">
+                                  <h5 class="card-title" >Industrial Automation-AGIIT(Axis Global Institute of Industrial Training)</h5>
+                                  <h6 class="card-subtitle mb-2 text-muted project-duration">02/2019</h6>
+                                </div>
+                            </div>
+
+
+                          </div>
+                            <br>
+                            <div class="d-flex justify-content-around" style="background: transparent;">
+
+                              <div class="card project-card" style="width: 18rem;">
+                                  <div class="card-body">
+                                    <h5 class="card-title" >ROS-IEEE</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted project-duration">01/2019</h6>
+                                  </div>
+                              </div>
+
+                              <div class="card project-card" style="width: 18rem;">
+                                <div class="card-body">
+                                  <h5 class="card-title" >Local Hack Day-MLH(Major League Hacking)</h5>
+                                  <h6 class="card-subtitle mb-2 text-muted project-duration">10/2019</h6>
+                                </div>
+                            </div>
+
+
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-md-1 col-xl-1 col-sm-1"></div>     
+        </div>
+        <br><br>
+        <div class="main" id="Find_Me">
+          <div class="container">
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-1 col-sm-1 col-xl-1"></div>
+                <div class="col-md-4 col-sm-4 col-xl-4">
+                        <h1>Address</h1>
+                        <p>Amrita School of Engineering,Amritapuri</p>
+                        <p>Vallikavu,Kollam,Kerela</p>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xl-4">
+                    <h1>Find Me Online</h1>
+                    <i class="links"><u>skdr369@gmail.com</u></i>
+                    <a href="https://www.linkedin.com/in/dhumsapuram-saikrishna-reddy-55b489188/" class="links"><p>Linkedin</p></a>
+                </div>  
+                <div class="col-md-1 col-sm-1 col-xl-1"></div>              
+            </div>
+          </div>
+      </div>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.6.8/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.6.8/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>
